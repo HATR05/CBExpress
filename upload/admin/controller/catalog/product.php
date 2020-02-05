@@ -1230,7 +1230,7 @@ class ControllerCatalogProduct extends Controller {
 	}
 
 	protected function validateCopy() {
-	if (!$this->user->hasPermission('modify', 'catalog/product')) {
+		if (!$this->user->hasPermission('modify', 'catalog/product')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 
