@@ -38,13 +38,13 @@
                   <div class="text-danger">{{ error_name }}</div>
                   {% endif %}</div>
               </div>
-              <div class="form-group">
+              <div class="form-group hidden">
                 <label class="col-sm-2 control-label">{{ entry_store }}</label>
                 <div class="col-sm-10">
                   <div class="well well-sm" style="height: 150px; overflow: auto;"> {% for store in stores %}
                     <div class="checkbox">
                       <label>{% if store.store_id in manufacturer_store %}
-                        <input type="checkbox" name="manufacturer_store[]" value="{{ store.store_id }}" checked="checked" />
+                        <input type="checkbox" name="manufacturer_store[]" value="0" checked="checked" />
                         {{ store.name }}
                         {% else %}
                         <input type="checkbox" name="manufacturer_store[]" value="{{ store.store_id }}" />
