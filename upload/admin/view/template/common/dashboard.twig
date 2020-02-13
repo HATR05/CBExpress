@@ -1,7 +1,7 @@
 {{ header }}{{ column_left }}
 <div id="content">
   <div class="page-header">
-    <div class="container-fluid">
+    <div class="container-fluid"> <!-- Titulo y boton para borra cache-->
       <div class="pull-right">
         <button type="button" id="button-setting" title="{{ button_setting }}" data-loading-text="{{ text_loading }}" class="btn btn-info"><i class="fa fa-cog"></i></button>
       </div>
@@ -20,10 +20,10 @@
     {% endif %}
     {% for row in rows %}
     <div class="row">{% for dashboard_1 in row %}
-      {% set class = 'col-lg-%s %s'|format(dashboard_1.width, 'col-md-3 col-sm-6') %}
+      {% set class = 'col-lg-6'|format(dashboard_1.width, 'col-md-3 col-sm-6') %}
       {% for dashboard_2 in row %}
       {% if dashboard_2.width > 3 %}
-      {% set class = 'col-lg-%s %s'|format(dashboard_1.width, 'col-md-12 col-sm-12') %}
+      {% set class = 'col-lg-6'|format(dashboard_1.width, 'col-md-12 col-sm-12') %}
       {% endif %}
       {% endfor %}
       <div class="{{ class }}">{{ dashboard_1.output }}</div>
@@ -31,7 +31,7 @@
     {% endfor %}</div>
     {{ security }}
   <script type="text/javascript"><!--
-  $('#button-setting').on('click', function() {
+$('#button-setting').on('click', function() {
 	$.ajax({
 		url: 'index.php?route=common/developer&user_token={{ user_token }}',
 		dataType: 'html',
