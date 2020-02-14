@@ -22,7 +22,7 @@
             <tbody>
               <tr>
                 <td style="width: 1%;"><button data-toggle="tooltip" title="{{ text_store }}" class="btn btn-info btn-xs"><i class="fa fa-shopping-cart fa-fw"></i></button></td>
-                <td><a href="{{ store_url }}" target="_blank">{{ store_name }}</a></td>
+                <td>{{ store_name }}</td>
               </tr>
               <tr>
                 <td><button data-toggle="tooltip" title="{{ text_date_added }}" class="btn btn-info btn-xs"><i class="fa fa-calendar fa-fw"></i></button></td>
@@ -51,14 +51,14 @@
           <table class="table">
             <tr>
               <td style="width: 1%;"><button data-toggle="tooltip" title="{{ text_customer }}" class="btn btn-info btn-xs"><i class="fa fa-user fa-fw"></i></button></td>
-              <td>{% if customer %} <a href="{{ customer }}" target="_blank">{{ firstname }} {{ lastname }}</a> {% else %}
+              <td>{% if customer %} {{ firstname }} {{ lastname }} {% else %}
                 {{ firstname }} {{ lastname }}
                 {% endif %}</td>
             </tr>
-            <tr>
+            <!--<tr>
               <td><button data-toggle="tooltip" title="{{ text_customer_group }}" class="btn btn-info btn-xs"><i class="fa fa-group fa-fw"></i></button></td>
               <td>{{ customer_group }}</td>
-            </tr>
+            </tr>-->
             <tr>
               <td><button data-toggle="tooltip" title="{{ text_email }}" class="btn btn-info btn-xs"><i class="fa fa-envelope-o fa-fw"></i></button></td>
               <td><a href="mailto:{{ email }}">{{ email }}</a></td>
@@ -86,7 +86,7 @@
                   <button disabled="disabled" class="btn btn-success btn-xs"><i class="fa fa-refresh"></i></button>
                   {% endif %}</td>
               </tr>
-              <tr>
+              <!--<tr>
                 <td>{{ text_reward }}</td>
                 <td class="text-right">{{ reward }}</td>
                 <td class="text-center">{% if customer and reward %}
@@ -114,7 +114,7 @@
                   {% else %}
                   <button disabled="disabled" class="btn btn-success btn-xs"><i class="fa fa-plus-circle"></i></button>
                   {% endif %}</td>
-              </tr>
+              </tr>-->
             </tbody>
           </table>
         </div>
@@ -145,7 +145,7 @@
           <thead>
             <tr>
               <td class="text-left">{{ column_product }}</td>
-              <td class="text-left">{{ column_model }}</td>
+              <!--<td class="text-left">{{ column_model }}</td>-->
               <td class="text-right">{{ column_quantity }}</td>
               <td class="text-right">{{ column_price }}</td>
               <td class="text-right">{{ column_total }}</td>
@@ -160,7 +160,7 @@
               &nbsp;<small> - {{ option.name }}: {{ option.value }}</small> {% else %}
               &nbsp;<small> - {{ option.name }}: <a href="{{ option.href }}">{{ option.value }}</a></small> {% endif %}
               {% endfor %}</td>
-            <td class="text-left">{{ product.model }}</td>
+            <!--<td class="text-left">{{ product.model }}</td>-->
             <td class="text-right">{{ product.quantity }}</td>
             <td class="text-right">{{ product.price }}</td>
             <td class="text-right">{{ product.total }}</td>
@@ -177,7 +177,7 @@
           {% endfor %}
           {% for total in totals %}
           <tr>
-            <td colspan="4" class="text-right">{{ total.title }}</td>
+            <td colspan="3" class="text-right">{{ total.title }}</td>
             <td class="text-right">{{ total.text }}</td>
           </tr>
           {% endfor %}
