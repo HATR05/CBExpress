@@ -179,12 +179,12 @@ class ControllerCommonColumnLeft extends Controller {
 					'href'     => '',
 					'children' => $marketplace
 				);		
-			}
+			}*/
 			
 			// Design
 			$design = array();
 			
-			if ($this->user->hasPermission('access', 'design/layout')) {
+			/*if ($this->user->hasPermission('access', 'design/layout')) {
 				$design[] = array(
 					'name'	   => $this->language->get('text_layout'),
 					'href'     => $this->url->link('design/layout', 'user_token=' . $this->session->data['user_token'], true),
@@ -206,7 +206,7 @@ class ControllerCommonColumnLeft extends Controller {
 					'href'     => $this->url->link('design/translation', 'user_token=' . $this->session->data['user_token'], true),
 					'children' => array()		
 				);	
-			}
+			}*/
 						
 			if ($this->user->hasPermission('access', 'design/banner')) {
 				$design[] = array(
@@ -216,13 +216,13 @@ class ControllerCommonColumnLeft extends Controller {
 				);
 			}
 			
-			if ($this->user->hasPermission('access', 'design/seo_url')) {
+			/*if ($this->user->hasPermission('access', 'design/seo_url')) {
 				$design[] = array(
 					'name'	   => $this->language->get('text_seo_url'),
 					'href'     => $this->url->link('design/seo_url', 'user_token=' . $this->session->data['user_token'], true),
 					'children' => array()		
 				);
-			}
+			}*/
 						
 			if ($design) {
 				$data['menus'][] = array(
@@ -232,7 +232,7 @@ class ControllerCommonColumnLeft extends Controller {
 					'href'     => '',
 					'children' => $design
 				);	
-			}*/
+			}
 			
 			// Sales
 			$sale = array();
@@ -421,8 +421,8 @@ class ControllerCommonColumnLeft extends Controller {
 			if ($user) {
 				$system[] = array(
 					'name'	   => $this->language->get('text_users'),
-					'href'     => '',
-					'children' => $user		
+					'href'     => $this->url->link('user/user', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
 				);
 			}
 			/*
