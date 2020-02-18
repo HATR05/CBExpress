@@ -129,7 +129,7 @@ class ControllerCommonColumnLeft extends Controller {
 			}
 			
 			// Extension
-			/*$marketplace = array();
+			$marketplace = array();
 			
 			if ($this->user->hasPermission('access', 'marketplace/marketplace')) {		
 				$marketplace[] = array(
@@ -179,7 +179,7 @@ class ControllerCommonColumnLeft extends Controller {
 					'href'     => '',
 					'children' => $marketplace
 				);		
-			}*/
+			}
 			
 			// Design
 			$design = array();
@@ -299,7 +299,7 @@ class ControllerCommonColumnLeft extends Controller {
 			}
 			
 			// Customer
-			/*$customer = array();
+			$customer = array();
 			
 			if ($this->user->hasPermission('access', 'customer/customer')) {
 				$customer[] = array(
@@ -309,7 +309,7 @@ class ControllerCommonColumnLeft extends Controller {
 				);	
 			}
 			
-			if ($this->user->hasPermission('access', 'customer/customer_group')) {
+			/*if ($this->user->hasPermission('access', 'customer/customer_group')) {
 				$customer[] = array(
 					'name'	   => $this->language->get('text_customer_group'),
 					'href'     => $this->url->link('customer/customer_group', 'user_token=' . $this->session->data['user_token'], true),
@@ -331,17 +331,16 @@ class ControllerCommonColumnLeft extends Controller {
 					'href'     => $this->url->link('customer/custom_field', 'user_token=' . $this->session->data['user_token'], true),
 					'children' => array()		
 				);	
-			}
+			}*/
 			
 			if ($customer) {
 				$data['menus'][] = array(
 					'id'       => 'menu-customer',
 					'icon'	   => 'fa-user', 
 					'name'	   => $this->language->get('text_customer'),
-					'href'     => '',
-					'children' => $customer
+					'href'     => $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'], true),
 				);	
-			}*/
+			}
 			
 			// Marketing
 			/*$marketing = array();
